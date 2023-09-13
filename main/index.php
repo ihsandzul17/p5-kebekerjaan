@@ -1,21 +1,21 @@
 <?php
 session_start();
-require 'backend.php';
+include 'backend.php';
 
 if (!isset($_SESSION['loggedIn'])) {
     header("Location: login.php");
 }
-
-if (!isset($_SESSION['index'])) {
-    $_SESSION['index'] = 1;
-}
+$index = 1;
 
 if (isset($_POST['increment'])) {
-    $_SESSION['index']++;
-} elseif (isset($_POST['decrement']) && $_SESSION['index'] > 1) {
-    $_SESSION['index']--;
+    $index++;
+} elseif (isset($_POST['decrement'])) {
+    if ($index <= 1) {
+        $index = 1;
+    } else {
+    $index--;
+    }
 }
-$index = $_SESSION['index'];
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +73,6 @@ $index = $_SESSION['index'];
     $query = mysqli_query($conn, $ambil);
     if (mysqli_num_rows($query) > 0) {
         while ($data = mysqli_fetch_assoc($query)) { ?>
-
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <i class="card-text">Kegiatan hari ini</i>

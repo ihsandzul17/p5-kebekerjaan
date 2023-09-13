@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <div class="form-container">
         <form method="POST" action="backend.php" enctype="multipart/form-data">
             <label>Nama kegiatan</label>
@@ -26,7 +25,7 @@
             <textarea class="form-control" id="textArea" name="note"></textarea>
             <label for="image">Upload Image</label>
             <input type="file" class="form-control" name="image" accept="image/*">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <input type="submit" class="btn btn-primary">Submit</input>
         </form>
     </div>
 

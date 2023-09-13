@@ -36,7 +36,7 @@ if (isset($_POST['login'])) {
     }
 
     body {
-        background: url(Gedung.jpg)no-repeat;
+        background: url(img/Gedung.jpg)no-repeat;
         background-size: cover;
     }
 
