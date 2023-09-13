@@ -13,16 +13,16 @@
     <div class="form-container">
         <form method="POST" action="backend.php" enctype="multipart/form-data">
             <label>Nama kegiatan</label>
-            <input type="text" class="form-control" name="namaKegiatan">
+            <input type="text" class="form-control form" name="namaKegiatan">
             <label>Nama koordinator</label>
-            <input type="text" class="form-control" name="namaKoordinator">
+            <input type="text" class="form-control form" name="penanggungJawab">
             <label>Tempat</label>
-            <input type="text" class="form-control" name="Tempat">
+            <input type="text" class="form-control form" name="Tempat">
             <label>Waktu</label>
             <input type="time" class="form-control waktu-input" name="waktuAwal">
             <input type="time" class="form-control waktu-input" name="waktuAkhir">
             <label for="textArea">Note</label>
-            <textarea class="form-control" id="textArea" name="note"></textarea>
+            <textarea class="form-control" id="textArea" name="deskripsiKegiatan"></textarea>
             <label for="image">Upload Image</label>
             <input type="file" class="form-control" name="image" accept="image/*">
             <input type="submit" class="btn btn-primary">Submit</input>
