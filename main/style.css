@@ -1,66 +1,7 @@
-body, h1, h2, h3, h4, p, ul, ol, li {
+/* Form.php */
+body {
     margin: 0;
     padding: 0;
 }
-
-body {
-    background-color: #f7f7f7;
-    font-family: Arial, sans-serif;
-}
-
-.form-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-container label {
-    font-size: 16px;
-    margin-bottom: 5px;
-}
-
-.form-control {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.form-container button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.form-container button:hover {
-    background-color: #0056b3;
-}
-
-.form-container input[type="text"] {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.form-container input[type="time"] {
-    width: 30%;
-    margin-bottom: 10px;
-}
-
-#textArea {
-    height: 100px;
-}
-
-.form-container label + .form-control {
-    margin-top: 10px;
-}
-
 
 
