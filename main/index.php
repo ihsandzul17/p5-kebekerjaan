@@ -7,7 +7,7 @@ if (!isset($_SESSION['loggedIn'])) {
     header("Location: login.php");
 }
 
-$index = 1;
+$index = $_SESSION['index'];
 
 if (isset($_GET['increment'])) {
     $index++;
@@ -18,6 +18,8 @@ if (isset($_GET['increment'])) {
         $index--;
     }
 }
+
+$_SESSION['index'] = $index;
 ?>
 
 <!DOCTYPE html>

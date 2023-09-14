@@ -206,6 +206,10 @@ section {
     margin-left: 52px;
 }
 
+.kegiatanContainer {
+    max-width: 400px;
+    overflow: hidden;
+}
 
 .namaKegiatan {
     color: #615C7F;
@@ -220,24 +224,20 @@ section {
     color: #615C7F;
 }
 
-
-.kegiatanInformation p:last-child {
-    margin-bottom: 15px;
-}
-
-.kegiatanDescription {
+.kegiatanDescription p{
     margin-top: 27px;
-    max-width: 500px;
     color: rgba(97, 92, 127, 0.75);
 }
 
 .flexKegiatan {
+    width: 900px;
+    max-width: 900px;
     border-radius: 8px;
     padding: 19px 31px 39px 40px;
     display: flex;
     justify-content: space-between;
     background-color: #F7FBFC;
-    gap: 78px;
+
 }
 
 form .controlButton {

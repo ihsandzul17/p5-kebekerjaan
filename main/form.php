@@ -25,7 +25,7 @@
             <textarea class="form-control" id="textArea" name="deskripsiKegiatan"></textarea>
             <label for="image">Upload Image</label>
             <input type="file" class="form-control" name="image" accept="image/*">
-            <input type="submit" class="btn btn-primary">Submit</input>
+            <input type="submit" class="btn btn-primary" name="submit">Submit</input>
         </form>
     </div>
 
