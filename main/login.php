@@ -1,3 +1,21 @@
+<?php
+$correctUsername = "user";
+$correctPassword = "pass";
+session_start();
+
+if (isset($_POST['login'])) {
+    $submittedUsername = $_POST['username'];
+    $submittedPassword = $_POST['password'];
+
+    if ($submittedUsername === $correctUsername && $submittedPassword === $correctPassword) {
+        $_SESSION['loggedIn'] = true;
+        header("Location: index.php");
+    } else {
+        $errorMessage = "Invalid username or password";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +36,7 @@
     }
 
     body {
-        background: url(Gedung.jpg)no-repeat;
+        background: url(img/Gedung.jpg)no-repeat;
         background-size: cover;
     }
 
@@ -83,6 +101,13 @@
             </div>
         </div>
     </div>
+
+    <?php if (isset($errorMessage)): ?>
+    <div class="alert alert-danger" role="alert">
+        <?php echo $errorMessage; ?>
+    </div>
+    <?php endif; ?>
+
 </body>
 
 </html>
