@@ -42,8 +42,8 @@ $_SESSION['index'] = $index;
     .form-container {
             padding: 20px;
             border-radius: 10px;
-            width: 80%; /* Adjust the width as needed */
-            margin: 20px auto; /* Center the form-container */
+            width: 80%; 
+            margin: 20px auto; 
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             position: relative;
         }
@@ -56,14 +56,14 @@ $_SESSION['index'] = $index;
         }
 
         .back-arrow svg {
-            width: 30px; /* Increase the size of the SVG */
-            height: 30px; /* Increase the size of the SVG */
-            fill: #2D928C; /* Change the color of the SVG */
+            width: 30px; 
+            height: 30px; 
+            fill: #2D928C; 
             transform: rotate(270deg);
         }
 
         .form-container h2 {
-            font-size: 24px; /* Increase font size */
+            font-size: 24px; 
             text-align: center;
             margin-bottom: 20px;
         }
@@ -74,22 +74,22 @@ $_SESSION['index'] = $index;
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 6px;
-            font-size: 16px; /* Increase font size */
+            font-size: 16px; 
         }
 
         .form-control.waktu-input {
-            width: 140px; /* Set the width to 50% and adjust for spacing */
+            width: 140px; 
             display: inline-block;
-            margin-right: 10px; /* Add spacing between the two inputs */
+            margin-right: 10px; 
         }
 
         textarea.form-control {
-            height: 100px; /* Increase the height of the textarea */
+            height: 100px; 
             resize: vertical;
         }
 
         input[type="file"].form-control {
-            border: none; /* Remove border for file input */
+            border: none; 
             padding: 5px 0;
         }
 
@@ -101,12 +101,12 @@ $_SESSION['index'] = $index;
             color: white;
             border: none;
             border-radius: 6px;
-            font-size: 18px; /* Increase font size */
+            font-size: 18px; 
             cursor: pointer;
         }
 
         .btn.btn-primary:hover {
-            background-color: #22668D; /* Change color on hover */
+            background-color: #22668D; 
         }
 
     </style>
