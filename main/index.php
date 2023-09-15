@@ -10,7 +10,11 @@ if (!isset($_SESSION['loggedIn'])) {
 $index = $_SESSION['index'];
 
 if (isset($_GET['increment'])) {
-    $index++;
+    $ambil = "SELECT * from information";
+    $query = mysqli_query($conn, $ambil);
+    if (mysqli_num_rows($query) > $index) {
+        $index++;
+    }
 } elseif (isset($_GET['decrement'])) {
     if ($index <= 1) {
         $index = 1;
@@ -43,7 +47,7 @@ $_SESSION['index'] = $index;
         </div> -->
             <div class="sidebarContent">
                 <div class="sidebarText">
-                    <h1>17 Maret</h1>
+                    <h1><?= date('j F') ?></h1>
                     <p>Jumlah kegiatan hari ini</p>
                 </div>
                 <div class="sidebarKegiatanBox">
@@ -99,9 +103,9 @@ $_SESSION['index'] = $index;
                 <div class="kegiatanDescription">
                     <p><?= $data["deskripsiKegiatan"] ?></p>
                 </div>
-                <?php } } ?>
             </div>
-            <img src="img/presentasi.png" alt="gambar kegiatan">
+            <img src="<?= $data["img"]?>" alt="gambar kegiatan">
+            <?php } } ?>
             </div>
             <form action="" method="GET">
                 <button type="submit" class="controlButton dec" name="decrement" class="sidebarButton">Sebelumnya</button>

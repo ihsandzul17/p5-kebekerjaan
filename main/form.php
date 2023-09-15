@@ -120,7 +120,7 @@ $_SESSION['index'] = $index;
         </div> -->
             <div class="sidebarContent">
                 <div class="sidebarText">
-                    <h1>17 Maret</h1>
+                    <h1><?= date('j F') ?></h1>
                     <p>Jumlah kegiatan hari ini</p>
                 </div>
                 <div class="sidebarKegiatanBox">

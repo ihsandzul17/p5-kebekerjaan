@@ -249,6 +249,7 @@ form .controlButton {
 }
 
 form .controlButton.dec {
+    color: rgba(58, 61, 97, 0.87);
     padding: 13px 31px 14px 37px;
     background-color: #D8E2F0;
 }

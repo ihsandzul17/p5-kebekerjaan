@@ -1,6 +1,7 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "projekP5");
 
+
 if (isset($_POST["submit"])) {
     $namaKegiatan = $_POST["namaKegiatan"];
     $penanggungJawab = $_POST["penanggungJawab"];
@@ -15,18 +16,15 @@ if (isset($_POST["submit"])) {
         $imagePath = $targetFile;
     }
 
-    // Query to find the last existing ID
     $getLastIDQuery = mysqli_query($conn, "SELECT MAX(id) AS last_id FROM information");
     $lastIDResult = mysqli_fetch_assoc($getLastIDQuery);
     $lastID = $lastIDResult["last_id"];
 
     $newID = $lastID + 1;
 
-    // Insert data with the calculated new ID
     $sql = mysqli_query($conn, "INSERT INTO information (id, ketKegiatan, penanggungJawab, tempat, deskripsiKegiatan, waktuAwal, waktuAkhir, img) VALUES ('$newID', '$namaKegiatan', '$penanggungJawab', '$Tempat', '$deskripsiKegiatan', '$waktuAwal', '$waktuAkhir', '$imagePath')");
 
     if ($sql) {
-        echo "<script>alert('Data terkirim')</script>";
         header("location: index.php");
     } else {
         echo "Data gagal terkirim";
