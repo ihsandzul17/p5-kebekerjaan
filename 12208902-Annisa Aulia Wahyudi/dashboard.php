@@ -12,8 +12,9 @@
     }
     body{
         background-image: url(gedung.jpg);
-        background-size: cover;
- 
+        background-size: cover; 
+        background-repeat: no-repeat; 
+        background-attachment: fixed; 
     }
     nav{
         background-color: #fff;
@@ -47,7 +48,7 @@
 
     .kata p{
         font-family:Book;
-        margin-top: 10rem;
+        margin-top: 20%;
         
     }
     .btn{
@@ -68,13 +69,38 @@
     }
     .kata2 {
         color: white;
-        font-size: 20px;
-        margin-top: 15rem;
-        margin-left: 40px;
+        font-size: 150%;
+        margin-top: 11rem;
+        margin-left: 4%;
     }
     .btnn{
-        padding-top: 50px;
+        padding-top: 9%;
     
+    }
+
+    @media (max-width: 768px) {
+        .kata {
+            margin-top: 10%;
+            font-size: 3rem;
+        }
+
+        .kata2 {
+            font-size: 1.5rem;
+            margin-top: 15rem;
+            margin-left: 4rem;
+            text-align: left;
+        }
+
+    
+        .btnn{
+            padding-top:10%;
+            margin-left: 2rem;
+        }
+
+        .btn {
+            
+            font-size: 1rem;
+        }
     }
 
 </style>
@@ -95,4 +121,3 @@
     </div>
 </body>
 </html>
-
