@@ -109,6 +109,44 @@ $_SESSION['index'] = $index;
             background-color: #22668D; 
         }
 
+        @media (max-width: 768px) {
+
+    .sidebarText h1 {
+        font-size: 20px;
+    }
+
+    .sidebarKegiatanBox {
+        display: flex;
+        justify-content: space-between; 
+        margin-top: 20px;
+    }
+
+    .box {
+        font-size: 16px; 
+    }
+
+    .wrapper header {
+        text-align: center; 
+    }
+
+    .calendar ul.weeks {
+        display: none; 
+    }
+
+    .boxGreenContaine{
+       
+    }
+
+    .form-container{
+        width: 100%;
+    }
+
+    .form-control{
+        padding: 1px;
+      
+    }
+}
+
     </style>
 </head>
 

@@ -267,16 +267,15 @@ form .controlButton.inc {
 
 @media (max-width: 768px) {
     .sidebarContainer {
-        width: 100%; /* Make the sidebar full width */
-        left: -100%; /* Hide the sidebar initially */
+        width: 40%; 
         transition: left 0.3s ease;
     }
 
     .menuButton.active {
-        left: 0; /* Show the sidebar when active */
+        left: 0; 
     }
 
-    /* Adjust other styles as needed for smaller screens */
+    
     .sidebarText {
         padding: 10px;
     }
@@ -286,7 +285,7 @@ form .controlButton.inc {
         display: flex;
         justify-content: center;
         margin-top: 10px;
-        flex-direction: column; /* Stack these containers vertically */
+        flex-direction: column; 
         text-align: center;
     }
 
@@ -302,4 +301,6 @@ form .controlButton.inc {
     .main {
         width: 100%;
     }
+
+    
 }
