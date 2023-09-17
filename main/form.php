@@ -109,6 +109,11 @@ $_SESSION['index'] = $index;
             background-color: #22668D; 
         }
 
+         @media (max-width: 768px) {
+            
+        }
+
+
     </style>
 </head>
 
