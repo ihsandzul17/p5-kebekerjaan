@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap');
 
 * {
-    font-family: 'poppins';
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -237,7 +237,6 @@ section {
     display: flex;
     justify-content: space-between;
     background-color: #F7FBFC;
-
 }
 
 form .controlButton {
