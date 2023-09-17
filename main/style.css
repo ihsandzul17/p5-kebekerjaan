@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap');
 
 * {
-    font-family: 'poppins';
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -237,7 +237,6 @@ section {
     display: flex;
     justify-content: space-between;
     background-color: #F7FBFC;
-
 }
 
 form .controlButton {
@@ -258,4 +257,49 @@ form .controlButton.inc {
     margin-left: 8px;
     padding: 13px 31px 14px 37px;
     background-color: #2D928C;
+}
+
+@media (max-width: 768px) {
+.addButtonSvg {
+    margin-top: 16px;
+}
+}
+
+@media (max-width: 768px) {
+    .sidebarContainer {
+        width: 100%; /* Make the sidebar full width */
+        left: -100%; /* Hide the sidebar initially */
+        transition: left 0.3s ease;
+    }
+
+    .menuButton.active {
+        left: 0; /* Show the sidebar when active */
+    }
+
+    /* Adjust other styles as needed for smaller screens */
+    .sidebarText {
+        padding: 10px;
+    }
+
+    .boxRedContainer,
+    .boxGreenContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        flex-direction: column; /* Stack these containers vertically */
+        text-align: center;
+    }
+
+    .boxContainer {
+        flex: 1;
+        text-align: center;
+    }
+
+    .calendar {
+        display: none;
+    }
+
+    .main {
+        width: 100%;
+    }
 }
