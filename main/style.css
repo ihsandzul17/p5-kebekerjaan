@@ -256,17 +256,16 @@ form .controlButton.inc {
 
 @media (max-width: 768px) {
     .sidebarContainer {
-        width: 100%; /* Mengisi lebar penuh */
-        padding: 20px; /* Menambahkan ruang padding sesuai kebutuhan */
+        width: 100%; 
+        padding: 20px; 
     }
 
-    /* Menyembunyikan kalender */
     .calendar {
         display: none;
     }
 
     .sidebarText h1 {
-        font-size: 18px; /* Atur ukuran font menjadi lebih kecil */
-        margin-bottom: 5px; /* Atur margin bawah jika diperlukan */
+        font-size: 18px; 
+        margin-bottom: 5px; 
     }
 }
