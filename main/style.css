@@ -87,8 +87,6 @@ button.sidebarButton {
     background-color: #F15353;
 }
 
-/* Calendar */
-/* Calendar */
 .wrapper {
     max-width: 100%;
     width: 90%;
@@ -122,7 +120,6 @@ header .icons span {
 
 header .current-date {
     font-size: 0.9rem;
-    /* Smaller font size */
 }
 
 .calendar {
@@ -140,7 +137,6 @@ header .current-date {
     color: #333;
     width: calc(90% / 7);
     font-size: 0.85rem;
-    /* Smaller font size */
 }
 
 .calendar .weeks li {
@@ -153,7 +149,6 @@ header .current-date {
     cursor: pointer;
     position: relative;
     margin-top: 10px;
-    /* Smaller margin-top */
 }
 
 .days li.inactive {
@@ -174,9 +169,7 @@ header .current-date {
     left: 50%;
     top: 50%;
     height: 18px;
-    /* Smaller height */
     width: 18px;
-    /* Smaller width */
     z-index: -1;
     border-radius: 50%;
     transform: translate(-50%, -50%);
@@ -260,46 +253,23 @@ form .controlButton.inc {
 }
 
 @media (max-width: 768px) {
-.addButtonSvg {
-    margin-top: 16px;
-}
-}
-
-@media (max-width: 768px) {
-    .sidebarContainer {
-        width: 100%; /* Make the sidebar full width */
-        left: -100%; /* Hide the sidebar initially */
-        transition: left 0.3s ease;
+    .addButtonSvg {
+        display: block;
+        margin-top: 16px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .menuButton.active {
-        left: 0; /* Show the sidebar when active */
-    }
-
-    /* Adjust other styles as needed for smaller screens */
     .sidebarText {
-        padding: 10px;
-    }
-
-    .boxRedContainer,
-    .boxGreenContainer {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-        flex-direction: column; /* Stack these containers vertically */
         text-align: center;
+        margin-top: 20px;
     }
 
-    .boxContainer {
-        flex: 1;
-        text-align: center;
+    .sidebarText h1 {
+        font-size: 24px;
     }
 
-    .calendar {
-        display: none;
-    }
-
-    .main {
-        width: 100%;
+    .sidebarText p {
+        font-size: 16px;
     }
 }
