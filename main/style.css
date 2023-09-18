@@ -9,6 +9,7 @@ body {
     padding: 0;
     background-color: #ffff;
     overflow: hidden;
+    
 }
 
 /* Index.php */
@@ -35,6 +36,7 @@ button.sidebarButton {
     width: 150px;
     margin-left: 30px;
 }
+
 
 .sidebarContent {
     float: left;
@@ -253,23 +255,13 @@ form .controlButton.inc {
 }
 
 @media (max-width: 768px) {
-    .addButtonSvg {
-        display: block;
-        margin-top: 16px;
-        margin-left: auto;
-        margin-right: auto;
+    .sidebarContainer {
+        width: 100%;
+        padding: 20px;
     }
 
-    .sidebarText {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .sidebarText h1 {
-        font-size: 24px;
-    }
-
-    .sidebarText p {
-        font-size: 16px;
+    .main {
+        width: 100%;
+        padding: 20px;
     }
 }

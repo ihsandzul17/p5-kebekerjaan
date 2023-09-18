@@ -133,10 +133,7 @@ $_SESSION['index'] = $index;
         display: none; 
     }
 
-    .boxGreenContaine{
-       
-    }
-
+    
     .form-container{
         width: 100%;
     }
