@@ -33,126 +33,11 @@ $_SESSION['index'] = $index;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="js/script.js" defer></script>
-
-    <style>
-
-    body {
-        background-color: #F0F4F5;
-    }
-    .form-container {
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%; 
-            margin: 20px auto; 
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        .back-arrow {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            cursor: pointer;
-        }
-
-        .back-arrow svg {
-            width: 30px; 
-            height: 30px; 
-            fill: #2D928C; 
-            transform: rotate(270deg);
-        }
-
-        .form-container h2 {
-            font-size: 24px; 
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 16px; 
-        }
-
-        .form-control.waktu-input {
-            width: 140px; 
-            display: inline-block;
-            margin-right: 10px; 
-        }
-
-        textarea.form-control {
-            height: 100px; 
-            resize: vertical;
-        }
-
-        input[type="file"].form-control {
-            border: none; 
-            padding: 5px 0;
-        }
-
-        .btn.btn-primary {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            background-color: #2D928C;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 18px; 
-            cursor: pointer;
-        }
-
-        .btn.btn-primary:hover {
-            background-color: #22668D; 
-        }
-
-        @media (max-width: 768px) {
-
-    .sidebarText h1 {
-        font-size: 20px;
-    }
-
-    .sidebarKegiatanBox {
-        display: flex;
-        justify-content: space-between; 
-        margin-top: 20px;
-    }
-
-    .box {
-        font-size: 16px; 
-    }
-
-    .wrapper header {
-        text-align: center; 
-    }
-
-    .calendar ul.weeks {
-        display: none; 
-    }
-
-    
-    .form-container{
-        width: 100%;
-    }
-
-    .form-control{
-        padding: 1px;
-      
-    }
-}
-
-    </style>
 </head>
 
-<body>
+<body class="formBody">
     <section>
         <div class="sidebarContainer">
-            <!-- <div class="logo">
-            <img src="img/logo.png">
-        </div> -->
             <div class="sidebarContent">
                 <div class="sidebarText">
                     <h1><?= date('j F') ?></h1>
@@ -193,7 +78,7 @@ $_SESSION['index'] = $index;
             </div>
             <a href="form.php"><img src="img/AddButton.svg" alt="add button" class="addButtonSvg"></a>
         </div>
-        <div class="form-container">
+        <div class="formContainer-form">
             <form method="POST" action="backend.php" enctype="multipart/form-data">
             <div class="back-arrow" onclick="window.location.href='index.php'">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -215,7 +100,7 @@ $_SESSION['index'] = $index;
                 <textarea class="form-control" id="textArea" name="deskripsiKegiatan"></textarea>
                 <label for="image">Upload Image</label>
                 <input type="file" class="form-control" name="image" accept="image/*">
-                <input type="submit" class="btn btn-primary" name="submit">
+                <input type="submit" class="btn btn-primary form" name="submit">
             </form>
         </div>
     </section>
