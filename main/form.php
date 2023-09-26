@@ -93,8 +93,16 @@ $_SESSION['index'] = $index;
                 <input type="text" class="form-control form" name="penanggungJawab">
                 <label>Tempat</label>
                 <input type="text" class="form-control form" name="Tempat">
+                <label>Tanggal</label>
+                <input type="date" class="form-control form" name="Tanggal">
                 <label>Waktu</label>
                 <input type="time" class="form-control waktu-input" name="waktuAwal">
+                <label>Urgensi Kegiatan</label>
+                <select name="urgensiKegiatan">
+                    <option>Penting</option>
+                    <option>Biasa</option>
+                </select>
+                <input type="time" class="form-control waktu-input" name="waktuAwal">-
                 <input type="time" class="form-control waktu-input" name="waktuAkhir">
                 <label for="textArea">Note</label>
                 <textarea class="form-control" id="textArea" name="deskripsiKegiatan"></textarea>

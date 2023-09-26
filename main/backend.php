@@ -9,6 +9,8 @@ if (isset($_POST["submit"])) {
     $waktuAwal = $_POST["waktuAwal"];
     $waktuAkhir = $_POST["waktuAkhir"];
     $deskripsiKegiatan = $_POST["deskripsiKegiatan"];
+    $tanggal = $_POST["Tanggal"];
+    $urgensiKegiatan = $_POST["urgensiKegiatan"];
 
     $targetDir = "uploads/";
     $targetFile = $targetDir . basename($_FILES["image"]["name"]);
@@ -22,7 +24,7 @@ if (isset($_POST["submit"])) {
 
     $newID = $lastID + 1;
 
-    $sql = mysqli_query($conn, "INSERT INTO information (id, ketKegiatan, penanggungJawab, tempat, deskripsiKegiatan, waktuAwal, waktuAkhir, img) VALUES ('$newID', '$namaKegiatan', '$penanggungJawab', '$Tempat', '$deskripsiKegiatan', '$waktuAwal', '$waktuAkhir', '$imagePath')");
+    $sql = mysqli_query($conn, "INSERT INTO information (id, urgensiKegiatan, ketKegiatan, penanggungJawab, tempat, deskripsiKegiatan, waktuAwal, waktuAkhir, img, tanggal) VALUES ('$newID', '$urgensiKegiatan', '$namaKegiatan', '$penanggungJawab', '$Tempat', '$deskripsiKegiatan', '$waktuAwal', '$waktuAkhir', '$imagePath', '$tanggal')");
 
     if ($sql) {
         header("location: index.php");
