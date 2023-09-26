@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include 'backend.php';
+require 'backend.php';
 
 if (!isset($_SESSION['loggedIn'])) {
     header("Location: login.php");
@@ -42,17 +42,20 @@ $_SESSION['index'] = $index;
                 <div class="sidebarText">
                     <h1><?= date('j F') ?></h1>
                     <p>Jumlah kegiatan hari ini</p>
+                <?php $jumlahKegiatan = getJumlahKegiatan();?>
                 </div>
+                <?php if (isDataExists() == true) {?>
                 <div class="sidebarKegiatanBox">
                     <div class="boxRedContainer">
-                        <div class="box boxRed">7</div>
+                        <div class="box boxRed"><?= $jumlahKegiatan["Penting"]?></div>
                         <p>Penting</p>
                     </div>
                     <div class="boxGreenContainer">
-                        <div class="box boxGreen">3</div>
+                        <div class="box boxGreen"><?= $jumlahKegiatan["Biasa"]?></div>
                         <p>Biasa </p>
                     </div>
                 </div>
+                <?php } ?>
                 <div class="wrapper">
                     <header>
                         <p class="current-date"></p>

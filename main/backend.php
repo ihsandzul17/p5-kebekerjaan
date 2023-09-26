@@ -1,6 +1,28 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "projekP5");
 
+function isDataExists() {
+    global $conn;
+    $query = mysqli_query($conn, "SELECT * FROM information");
+    if (mysqli_num_rows($query) == 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function getJumlahKegiatan() {
+    global $conn;
+    $queryPertama = mysqli_query($conn, "SELECT * FROM information WHERE urgensiKegiatan='Biasa'");
+    $queryKedua = mysqli_query($conn, "SELECT * FROM information WHERE urgensiKegiatan='Penting'");
+    $jumlahBiasa = mysqli_num_rows($queryPertama);
+    $jumlahPenting = mysqli_num_rows($queryKedua);
+    $jumlahKegiatan = [
+        "Penting" => "$jumlahPenting",
+        "Biasa" => "$jumlahBiasa"
+    ];
+    return $jumlahKegiatan;
+}
 
 if (isset($_POST["submit"])) {
     $namaKegiatan = $_POST["namaKegiatan"];
