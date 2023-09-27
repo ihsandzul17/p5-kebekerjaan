@@ -172,8 +172,8 @@ $_SESSION['index'] = $index;
                     <header>
                         <p class="current-date"></p>
                         <div class="icons">
-                            <span id="prev" class="material-symbols-rounded">chevron_left</span>
-                            <span id="next" class="material-symbols-rounded">chevron_right</span>
+                            <span id="prev" class="material-symbols-rounded"><</span>
+                            <span id="next" class="material-symbols-rounded">></span>
                         </div>
                     </header>
                     <div class="calendar">
