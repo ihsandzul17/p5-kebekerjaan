@@ -42,24 +42,24 @@ $_SESSION['index'] = $index;
 <body>
     <section>
         <div class="sidebarContainer">
-            <!-- <div class="logo">
-            <img src="img/logo.png">
-        </div> -->
             <div class="sidebarContent">
                 <div class="sidebarText">
                     <h1><?= date('j F') ?></h1>
                     <p>Jumlah kegiatan hari ini</p>
+                <?php $jumlahKegiatan = getJumlahKegiatan();?>
                 </div>
+                <?php if (isDataExists() == true) { ?>
                 <div class="sidebarKegiatanBox">
                     <div class="boxRedContainer">
-                        <div class="box boxRed">7</div>
+                        <div class="box boxRed"><?= $jumlahKegiatan["Penting"]?></div>
                         <p>Penting</p>
                     </div>
                     <div class="boxGreenContainer">
-                        <div class="box boxGreen">3</div>
+                        <div class="box boxGreen"><?= $jumlahKegiatan["Biasa"]?></div>
                         <p>Biasa </p>
                     </div>
                 </div>
+                <?php } ?>
                 <div class="wrapper">
                     <header>
                         <p class="current-date"></p>
@@ -86,33 +86,35 @@ $_SESSION['index'] = $index;
             <a href="form.php"><img src="img/AddButton.svg" alt="add button" class="addButtonSvg"></a>
         </div>
 
-        <div class="main">
-            <?php 
+        <div class="indexContainer">
+            <?php
             $ambil = "SELECT * from information WHERE id='$index'";
             $query = mysqli_query($conn, $ambil);
             if (mysqli_num_rows($query) > 0) {
                 while ($data = mysqli_fetch_assoc($query)) { ?>
-            <h2 class="namaKegiatan"><?= $data["ketKegiatan"] ?></h2>
-            <div class="flexKegiatan">
-            <div class="kegiatanContainer">
-                <div class="kegiatanInformation">
-                    <p>Penanggung jawab : <?= $data["penanggungJawab"] ?></p>
-                    <p>Tempat : <?= $data["tempat"] ?></p>
-                    <p>Waktu : <?= $data["waktuAwal"] ?> - <?= $data["waktuAkhir"] ?></p>
-                </div>
-                <div class="kegiatanDescription">
-                    <p><?= $data["deskripsiKegiatan"] ?></p>
-                </div>
-            </div>
-            <img src="<?= $data["img"]?>" alt="gambar kegiatan">
-            <?php } } ?>
-            </div>
-            <form action="" method="GET">
-                <button type="submit" class="controlButton dec" name="decrement" class="sidebarButton">Sebelumnya</button>
-                <button type="submit" class="controlButton inc" name="increment" class="sidebarButton">Selanjutnya</button>
-            </form>
+                    <h2 class="namaKegiatan"><?= $data["ketKegiatan"] ?></h2>
+                    <div class="kegiatanContainer">
+                        <div class="kegiatanText">
+                            <div class="kegiatanInformation">
+                                <p>Penanggung jawab : <?= $data["penanggungJawab"] ?></p>
+                                <p>Tempat : <?= $data["tempat"] ?></p>
+                                <p>Waktu : <?= $data["waktuAwal"] ?> - <?= $data["waktuAkhir"] ?></p>
+                            </div>
+                            <div class="kegiatanDescription">
+                                <p><?= $data["deskripsiKegiatan"] ?></p>
+                            </div>
+                        </div>
+                        <img src="<?= $data["img"] ?>" alt="gambar kegiatan">
+                <?php }
+            } ?>
+                    </div>
+                    <form action="" method="GET">
+                        <button type="submit" class="controlButton dec" name="decrement" class="sidebarButton">Sebelumnya</button>
+                        <button type="submit" class="controlButton inc" name="increment" class="sidebarButton">Selanjutnya</button>
+                    </form>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
+
 </html>

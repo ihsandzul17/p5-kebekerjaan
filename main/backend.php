@@ -1,6 +1,28 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "projekP5");
 
+function isDataExists() {
+    global $conn;
+    $query = mysqli_query($conn, "SELECT * FROM information");
+    if (mysqli_num_rows($query) == 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function getJumlahKegiatan() {
+    global $conn;
+    $queryPertama = mysqli_query($conn, "SELECT * FROM information WHERE urgensiKegiatan='Biasa'");
+    $queryKedua = mysqli_query($conn, "SELECT * FROM information WHERE urgensiKegiatan='Penting'");
+    $jumlahBiasa = mysqli_num_rows($queryPertama);
+    $jumlahPenting = mysqli_num_rows($queryKedua);
+    $jumlahKegiatan = [
+        "Penting" => "$jumlahPenting",
+        "Biasa" => "$jumlahBiasa"
+    ];
+    return $jumlahKegiatan;
+}
 
 if (isset($_POST["submit"])) {
     $namaKegiatan = $_POST["namaKegiatan"];
@@ -9,6 +31,8 @@ if (isset($_POST["submit"])) {
     $waktuAwal = $_POST["waktuAwal"];
     $waktuAkhir = $_POST["waktuAkhir"];
     $deskripsiKegiatan = $_POST["deskripsiKegiatan"];
+    $tanggal = $_POST["Tanggal"];
+    $urgensiKegiatan = $_POST["urgensiKegiatan"];
 
     $targetDir = "uploads/";
     $targetFile = $targetDir . basename($_FILES["image"]["name"]);
@@ -22,7 +46,7 @@ if (isset($_POST["submit"])) {
 
     $newID = $lastID + 1;
 
-    $sql = mysqli_query($conn, "INSERT INTO information (id, ketKegiatan, penanggungJawab, tempat, deskripsiKegiatan, waktuAwal, waktuAkhir, img) VALUES ('$newID', '$namaKegiatan', '$penanggungJawab', '$Tempat', '$deskripsiKegiatan', '$waktuAwal', '$waktuAkhir', '$imagePath')");
+    $sql = mysqli_query($conn, "INSERT INTO information (id, urgensiKegiatan, ketKegiatan, penanggungJawab, tempat, deskripsiKegiatan, waktuAwal, waktuAkhir, img, tanggal) VALUES ('$newID', '$urgensiKegiatan', '$namaKegiatan', '$penanggungJawab', '$Tempat', '$deskripsiKegiatan', '$waktuAwal', '$waktuAkhir', '$imagePath', '$tanggal')");
 
     if ($sql) {
         header("location: index.php");

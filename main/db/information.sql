@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2023 at 04:53 PM
+-- Generation Time: Sep 26, 2023 at 09:14 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -29,23 +29,24 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `information` (
   `id` int(11) NOT NULL,
+  `urgensiKegiatan` varchar(15) NOT NULL,
   `ketKegiatan` varchar(30) NOT NULL,
   `penanggungJawab` varchar(30) NOT NULL,
   `tempat` varchar(30) NOT NULL,
   `deskripsiKegiatan` varchar(300) NOT NULL,
   `waktuAwal` time NOT NULL,
   `waktuAkhir` time NOT NULL,
-  `img` varchar(64) NOT NULL
+  `img` varchar(64) NOT NULL,
+  `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `information`
 --
 
-INSERT INTO `information` (`id`, `ketKegiatan`, `penanggungJawab`, `tempat`, `deskripsiKegiatan`, `waktuAwal`, `waktuAkhir`, `img`) VALUES
-(1, 'Workshop siswa', 'Ardan', 'Balai Krida', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ipsa reiciendis rerum, repellat tempore asperiores autem, accusamus porro quisquam illum sint dolor necessitatibus molestiae incidunt voluptatem in accusantium! Magni, qui.', '07:00:00', '24:00:00', 'uploads/MMD00150.jpg'),
-(2, 'Maulid Nabi', 'Iwan', 'Lapangan', 'Semua siswa wajib mengikuti acara ini', '07:15:00', '12:00:00', 'uploads/MMD00150.jpg'),
-(3, 'atc', 'atc', 'atc', 'atc', '11:31:00', '03:13:00', 'uploads/golden-ratio-30815.png');
+INSERT INTO `information` (`id`, `urgensiKegiatan`, `ketKegiatan`, `penanggungJawab`, `tempat`, `deskripsiKegiatan`, `waktuAwal`, `waktuAkhir`, `img`, `tanggal`) VALUES
+(1, 'Biasa', 'Maulid Nabi', 'Ardan', 'Lapangan', 'Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test', '21:37:00', '12:11:00', 'uploads/presentasi.png', '2023-09-10'),
+(2, 'Penting', 'Test', 'Test', 'Test', 'Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test', '03:01:00', '13:31:00', 'uploads/presentasi.png', '2023-09-12');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +66,7 @@ ALTER TABLE `information`
 -- AUTO_INCREMENT for table `information`
 --
 ALTER TABLE `information`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=358;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=359;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
